@@ -1,5 +1,8 @@
 FROM nginx:1.20
 
+RUN apt-get update && \
+    apt-get upgrade -y
+
 RUN groupadd -g 10001 app && \
     useradd -u 10000 -g app app && \
     mkdir -p /var/run/nginx /var/tmp/nginx && \
